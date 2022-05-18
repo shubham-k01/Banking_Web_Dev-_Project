@@ -12,17 +12,18 @@ import {
 function App() {
   return (
     <>
+    {/* hello how are you */}
     <Router>
     <div style={{backgroundColor:'#f5ccff',height:'50rem'}}>
     <Navbar/>
     <Switch>
-      <Route path="/">
+      {/* <Route path="/">
         <Home/>
-      </Route>
-      <Route path="/login">
+      </Route> */}
+      {/* <Route path="/login">
         <Login/>
-      </Route>
-      <Route path="/signup">
+      </Route> */}
+      <Route path="/">
         <Validation/>
       </Route>
     </Switch>
