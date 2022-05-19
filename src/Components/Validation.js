@@ -4,8 +4,8 @@ import React, { useState } from 'react'
 export default function Validation() {
 
     return (
-        <div className='container m-5  center-align' >
-            <form className="row g-3 needs-validation" style={{display:'block'}} noValidate>
+        <div className='container' >
+            <form className="row g-3 needs-validation my-3" style={{display:'block'}} noValidate>
                 <div className="col-md-4">
                     <label htmlFor="validationCustom01" className="form-label">First name</label>
                     <input type="text" className="form-control" id="validationCustom01" required/>
