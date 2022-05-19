@@ -15,7 +15,7 @@ import {
 function App() {
   return (
     <>
-    {/* hello how are you */}
+    <div style={{backgroundColor:"#f2ccff",height:"55rem"}}>
     <Router>
     <div>
     <Navbar/>
@@ -27,6 +27,7 @@ function App() {
     </Routes>
     </div>
     </Router>
+    </div>
     </>
   );
 }
