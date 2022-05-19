@@ -20,7 +20,7 @@ export default function Navbar() {
                         </ul>
                         <form className="d-flex ms-auto" role="search">
                             <button className="btn btn-outline-success btn-light mx-2" type="submit" >Login</button>
-                            <button type="submit" class="btn btn-outline-success btn-light mx-2">Sign Up</button>
+                            <button type="submit" class="btn btn-outline-success btn-light mx-2"><Link to="/signup">Sign Up</Link></button>
                         </form>
                     </div>
                 </div>
