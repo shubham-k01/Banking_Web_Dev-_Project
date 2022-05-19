@@ -12,7 +12,6 @@ import {
 function App() {
   return (
     <>
-    {/* hello how are you */}
     <Router>
     <div style={{backgroundColor:'#f5ccff',height:'50rem'}}>
     <Navbar/>
