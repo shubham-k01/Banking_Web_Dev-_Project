@@ -2,9 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './Components/Navbar';
 import Validation from './Components/Validation';
+import home from './home.jpg';
+import About from './Components/About';
+import Home from './Components/Home';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
   Link
 } from "react-router-dom";
@@ -13,19 +16,15 @@ function App() {
   return (
     <>
     <Router>
-    <div style={{backgroundColor:'#f5ccff',height:'50rem'}}>
+    <div>
     <Navbar/>
-    <Switch>
-      {/* <Route path="/">
-        <Home/>
-      </Route> */}
-      {/* <Route path="/login">
-        <Login/>
-      </Route> */}
-      <Route path="/">
-        <Validation/>
-      </Route>
-    </Switch>
+    <Routes>
+      {/* <Route path="/" element={<Home/>}/>
+      <Route path="/login" element={<Login/>}/> */}
+      <Route path="/signup" element={<Validation/>}/>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/about" element={<About/>}/>
+    </Routes>
     </div>
     </Router>
     </>
