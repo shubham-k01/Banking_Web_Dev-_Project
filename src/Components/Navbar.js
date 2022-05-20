@@ -1,8 +1,10 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {Zoom,Fade,Rotate,Flip,Bounce, Roll} from 'react-reveal'
+
 export default function Navbar() {
     return (
-        <div>
+        <div style={{position:"sticky"}}>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/">BayBank</Link>
@@ -19,8 +21,10 @@ export default function Navbar() {
                             </li>
                         </ul>
                         <form className="d-flex ms-auto" role="search">
+                            <Zoom>
                             <button className="btn btn-outline-success btn-light mx-2" type="submit" >Login</button>
-                            <button type="submit" class="btn btn-outline-success btn-light mx-2"><Link to="/signup">Sign Up</Link></button>
+                            <button type="submit" class="btn btn-outline-success btn-light mx-2" ><Link to="/signup" style={{textDecoration:"None"}}>Sign Up</Link></button>
+                            </Zoom>
                         </form>
                     </div>
                 </div>
