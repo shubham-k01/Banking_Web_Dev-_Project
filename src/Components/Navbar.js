@@ -4,7 +4,7 @@ import {Zoom,Fade,Rotate,Flip,Bounce, Roll} from 'react-reveal'
 
 export default function Navbar() {
     return (
-        <div style={{position:"sticky"}}>
+        <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/">BayBank</Link>

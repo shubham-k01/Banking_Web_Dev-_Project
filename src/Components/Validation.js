@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-
+import {Zoom,Fade,Rotate,Flip,Bounce, Roll} from 'react-reveal'
 
 export default function Validation() {
 
     return (
         <div className='container' >
             <form className="row g-3 needs-validation my-3" style={{display:'block'}} noValidate>
+                <Zoom>
                 <div className="col-md-4">
                     <label htmlFor="validationCustom01" className="form-label">First name</label>
                     <input type="text" className="form-control" id="validationCustom01" required/>
@@ -65,6 +66,7 @@ export default function Validation() {
                             </div>
                     </div>
                 </div>
+                </Zoom>
                 <div className="col-12">
                     <button className="btn btn-primary" type="submit">Submit form</button>
                 </div>

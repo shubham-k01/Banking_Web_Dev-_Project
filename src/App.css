@@ -13,6 +13,11 @@
   }
 }
 
+.imgsr{
+    width: 7000px;
+    height: 90vh;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

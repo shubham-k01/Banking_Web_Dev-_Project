@@ -7,6 +7,7 @@ import About from './Components/About';
 import Home from './Components/Home';
 import React, { useState } from 'react'
 
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -20,10 +21,10 @@ function App() {
     <>
     <div  style={{
     backgroundColor:"rgb(238, 204, 255)",
-    height: "50rem"
+    height: "115vh"
 }}>
     <Router>
-    <Navbar/>
+    <Navbar style={{position:"sticky"}}/>
     <Routes>
       {/* <Route path="/login" element={<Login/>}/> */}
       <Route path="/signup" element={<Validation/>}/>
