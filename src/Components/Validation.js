@@ -5,7 +5,7 @@ export default function Validation() {
 
     return (
         <div className='container' >
-            <form className="row g-3 needs-validation my-3" style={{display:'block'}} noValidate>
+            <form className="row g-3 needs-validation my-3" style={{display:'block'}} method="post" action="/services">
                 <Zoom>
                 <div className="col-md-4">
                     <label htmlFor="validationCustom01" className="form-label">First name</label>
@@ -32,29 +32,13 @@ export default function Validation() {
                     </div>
                 </div>
                 <div className="col-md-6">
-                    <label htmlFor="validationCustom03" className="form-label">City</label>
+                    <label htmlFor="validationCustom03" className="form-label">Password</label>
                     <input type="text" className="form-control" id="validationCustom03" required/>
                         <div className="invalid-feedback">
-                            Please provide a valid city.
+                            Please provide a valid password.
                         </div>
                 </div>
-                <div className="col-md-3">
-                    <label htmlFor="validationCustom04" className="form-label">State</label>
-                    {/* <select className="form-select" id="validationCustom04" required>
-                        <option selected disabled value="">Choose...</option>
-                        <option>...</option>
-                    </select> */}
-                    <div className="invalid-feedback">
-                        Please select a valid state.
-                    </div>
-                </div>
-                <div className="col-md-3">
-                    <label htmlFor="validationCustom05" className="form-label">Zip</label>
-                    <input type="text" className="form-control" id="validationCustom05" required/>
-                        <div className="invalid-feedback">
-                            Please provide a valid zip.
-                        </div>
-                </div>
+                
                 <div className="col-12">
                     <div className="form-check">
                         <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required/>

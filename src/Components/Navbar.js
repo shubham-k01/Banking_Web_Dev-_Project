@@ -19,6 +19,9 @@ export default function Navbar() {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/about">About Us</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/services">Services</Link>
+                            </li>
                         </ul>
                         <form className="d-flex ms-auto" role="search">
                             <Zoom>
