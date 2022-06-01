@@ -7,6 +7,7 @@ export default function Services() {
             <ul>
             <b style={{display:"block"}}>Our Services:</b>
                 <li>Display Bank Balance</li>
+                <li>Deposit Money in your account</li>
                 <li>Transfer Money</li>
             </ul>
             
