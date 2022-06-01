@@ -25,8 +25,8 @@ export default function Navbar() {
                         </ul>
                         <form className="d-flex ms-auto" role="search">
                             <Zoom>
-                            <button className="btn btn-outline-success btn-light mx-2" type="submit" >Login</button>
-                            <button type="submit" class="btn btn-outline-success btn-light mx-2 btn-rounded" ><Link to="/signup" style={{textDecoration:"None"}}>Sign Up</Link></button>
+                            <button className="btn btn-outline-success btn-light mx-2" type="submit" ><Link to="/login" style={{textDecoration:"None"}}>Login</Link></button>
+                            <button type="submit" className="btn btn-outline-success btn-light mx-2" ><Link to="/signup" style={{textDecoration:"None"}}>Sign Up</Link></button>
                             </Zoom>
                         </form>
                     </div>

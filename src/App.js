@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './Components/Navbar';
 import Validation from './Components/Validation';
-import home from './home.jpg';
+// import home from './home.jpg';
 import About from './Components/About';
 import Home from './Components/Home';
 import React, { useState } from 'react';
@@ -14,7 +14,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
+  // Link
 } from "react-router-dom";
 
 function App() {
@@ -31,6 +31,7 @@ function App() {
       <Route path="/signup" element={<Validation/>}/>
       <Route path="/" element={<Home/>}/>
       <Route path="/about" element={<About/>}/>
+      <Route path="/login" element={<Login/>}/>
       <Route path="/services" element={<Services/>}/>
     </Routes>
     </Router>
