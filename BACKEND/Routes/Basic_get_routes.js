@@ -16,5 +16,21 @@ router.get('/login',(req,res)=>{
 router.get('/signup',(req,res)=>{
     res.sendFile('C:/Users/shubham v kurunkar/Desktop/Html/Banking_Web_Dev-_Project/build/index.html')
 })
+router.get('/red1',(req,res)=>{
+    res.statusCode=200;
+    res.sendFile('C:/Users/shubham v kurunkar/Desktop/Html/Banking_Web_Dev-_Project/build/index.html')
+})
+router.get('/red2',(req,res)=>{
+    res.statusCode=200;
+    res.sendFile('C:/Users/shubham v kurunkar/Desktop/Html/Banking_Web_Dev-_Project/build/index.html')
+})
+router.get('/red3',(req,res)=>{
+    res.statusCode=200;
+    res.sendFile('C:/Users/shubham v kurunkar/Desktop/Html/Banking_Web_Dev-_Project/build/index.html')
+})
+router.get('/red4',(req,res)=>{
+    res.statusCode=200;
+    res.sendFile('C:/Users/shubham v kurunkar/Desktop/Html/Banking_Web_Dev-_Project/build/index.html')
+})
 
 module.exports=router

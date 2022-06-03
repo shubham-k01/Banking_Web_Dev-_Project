@@ -24,40 +24,50 @@ app.use('/',router)
 const Bank = new mongoose.model('Bank',bankSchema);
 
 //Function to find if a username is already taken or not
-const checkUser =(u)=>{
-    const presentUser = Bank.findOne({Username:u},(err,data)=>{
-        if(err){
-            console.log(err);
-        }
-        else{
-            console.log(data)
-        }
-    })
-} 
-app.post('/signup',(req,res)=>{
-    const data =req.body;
-    const {Username} = req.body;
-    const pu =checkUser(Username);
-    if(pu){
-        const newAcc = new Bank(data);
-        console.log('New Account created')
-        document.getElementById('display').innerHTML = "<b>Your account has been created successfully!</b>"
-        setTimeout(() => {
-            document.getElementById('display').innerHTML = ""
-        }, 5000);
-        res.send();
+// const checkUser =(u)=>{
+//     Bank.findOne({Username:u},(err,data)=>{
+//         if(err){
+//             console.log(err);
+//             return false
+//         }
+//         else{
+//             console.log(data);
+//             return data
+//         }
+//     })
+// } 
+app.post('/login',async (req,res)=>{
+    const data =req.body
+    const u = req.body.Username;
+    const p = req.body.Password;
+    console.log(data)
+    const userExists = await Bank.find({ Username: u ,Password : p});
+    console.log(userExists)
+    if(userExists){
+        console.log('Account accessed')
+        res.redirect('/red3');
     }else{
-        console.log('Account cannot be created')
-        document.getElementById('display').innerHTML = "<b>Account cannot be created ! The provided username already exists. Give another username</b>"
-        setTimeout(() => {
-            document.getElementById('display').innerHTML =""
-        }, 5000);
-        res.send();
+        console.log('Account cannot be accessed')
+        res.redirect('/red4')
     }
 })
 
-app.post('/login',(req,res)=>{
-    const data =req.body
+
+app.post('/signup', async (req,res)=>{
+    const data =req.body;
+    const u = req.body.Username;
+    const userExists =  await Bank.find({ Username: u });  
+    console.log(data)
+    // const pu =checkUser(Username);
+    const newAcc = new Bank(data);
+    if(!userExists){
+        console.log('New Account created')
+        res.redirect('/red1');
+    }else{
+        Bank.save(newAcc)
+        console.log('Account cannot be created')
+        res.redirect('/red2')
+    }
 })
 
 app.listen(3000,()=>{
@@ -69,4 +79,3 @@ app.listen(3000,()=>{
 // login 
 // signup 
 // first bankbalance =0 
-// new accounts to be added to database
