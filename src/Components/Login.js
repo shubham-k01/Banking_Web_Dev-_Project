@@ -1,24 +1,25 @@
 import React from 'react'
-
+import { Navigate } from 'react-router-dom'
 import {Zoom} from 'react-reveal'
 
 export default function Login() {
+    fetch('/login').then(<Navigate to='/services2'/>)
   return (
     <Zoom>
         <div className='container d-flex' style={{width:"400px",height:"450px",marginTop:"50px",justifyContent:"center",alignItems:"center",backgroundColor:"yellowgreen",borderRadius:"10px",border:"5px"}} >
             <div className='container' >
             <b>Login</b>
             <br />
-        <form className="row g-3 needs-validation my-3" style={{display:'block'}} method="post" action="/login">
+        <form className="row g-3 needs-validation my-3" style={{display:'block'}} method="POST" action="/login">
 
             <div className="form-group">
                 <label for="exampleInputEmail1">Username</label>
-                <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username" />
+                <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='Username' placeholder="Enter Username" />
                 <small id="emailHelp" className="form-text text-muted">We'll never share your Username with anyone else.</small>
             </div>
             <div className="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+                <input type="password" className="form-control" id="exampleInputPassword1" name='Password' placeholder="Password" />
             </div>
             <div className="form-group form-check">
                 <input type="checkbox" className="form-check-input" id="exampleCheck1" />
