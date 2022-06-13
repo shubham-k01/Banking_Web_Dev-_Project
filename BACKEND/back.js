@@ -89,30 +89,33 @@ app.post('/getbal',(req,res)=>{
 app.post('/depm',(req,res)=>{
     const u =req.body.Username
     const p =req.body.password
-    const b =req.body.money
+    const b = Number(req.body.money)
     var bb = 0
     Bank.findOne({$and: [{ Username: u ,Password : p}]},((err,user)=>{
         if(user){
             console.log('Account found')
             bb = user.bankBalance
-            return
-        }
-        else{
-            console.log('No account')
-        }})
-        )
-    Bank.updateOne({$and: [{ Username: u ,Password : p}]},{$add: [{"bankBalance": bb , b }]},((err,user)=>{
-        if(user){
-            console.log('Account found')
-            res.send(`<h1>HI ${u}</h1><br /><h2>Your bank balance was : ${bb}</h2><br /><h2>Updated Balance: ${user.bankBalance}</h2>`)
-            console.log('Account updated')
+            let newb = bb + b;
+            Bank.updateOne({$and: [{ Username: u ,Password : p}]},{bankBalance: newb },((err,user1)=>{
+                if(user1){
+                    console.log('Account found')
+                    res.send(`<h1>HI ${u}</h1><br /><h2>Your bank balance was : ${bb}</h2><br /><h2>Updated Balance: ${newb}</h2>`)
+                    console.log('Account updated')
+                    return
+                }
+                else{
+                    console.log('No account')
+                    res.send('<h1>No account by this username</h1>')
+                }
+            }))
             return
         }
         else{
             console.log('No account')
             res.send('<h1>No account by this username</h1>')
-        }
-    }))
+        }})
+        )
+    
 })
 app.post('/signup',  (req,res)=>{
     const data =req.body;
