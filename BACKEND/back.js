@@ -46,27 +46,74 @@ app.post('/login',async (req,res)=>{
         }
     })
 })
-app.get('/finalser',(req,res)=>{
 
-})
 app.post('/first',(req,res)=>{
     const data =req.body
     const u = req.body.Username;
     console.log(data)
-    Bank.findOne({ Username: u },(err,user)=>{
+    Bank.updateOne({ Username: u },{bankBalance: req.body.bankBalance},(err,user)=>{
         if(user){
-            Bank.updateOne({Username: u},{bankBalance: data.bankBalance})
             console.log('Account updated')
-            res.redirect('/finalser')
+            res.redirect('/services2')
+            return
         }
         else{
             console.log(' Account does not exist')
-            res.redirect('/red2')
+            res.redirect('/ff')
         }
+        
         }); 
-
     })
 
+app.post('/getbal',(req,res)=>{
+    const u =req.body.Username
+    const p =req.body.password
+    const data =req.body
+    console.log('Data')
+    console.log(data)
+    Bank.findOne({$and: [{ Username: u ,Password : p}]},(err,user)=>{
+
+        console.log(user)
+        if(user){
+            const bb = user.bankBalance;
+            console.log('Account found')
+            res.send(`<h2>Hi ${user.Username}</h2><br/><h2>Your bank balance is ${user.bankBalance}</h2>`)
+            return
+        }
+        else{
+            console.log('No account')
+            res.send('<h1>No account by this username</h1>')
+        }
+    })
+})
+app.post('/depm',(req,res)=>{
+    const u =req.body.Username
+    const p =req.body.password
+    const b =req.body.money
+    var bb = 0
+    Bank.findOne({$and: [{ Username: u ,Password : p}]},((err,user)=>{
+        if(user){
+            console.log('Account found')
+            bb = user.bankBalance
+            return
+        }
+        else{
+            console.log('No account')
+        }})
+        )
+    Bank.updateOne({$and: [{ Username: u ,Password : p}]},{$add: [{"bankBalance": bb , b }]},((err,user)=>{
+        if(user){
+            console.log('Account found')
+            res.send(`<h1>HI ${u}</h1><br /><h2>Your bank balance was : ${bb}</h2><br /><h2>Updated Balance: ${user.bankBalance}</h2>`)
+            console.log('Account updated')
+            return
+        }
+        else{
+            console.log('No account')
+            res.send('<h1>No account by this username</h1>')
+        }
+    }))
+})
 app.post('/signup',  (req,res)=>{
     const data =req.body;
     const u = req.body.Username;
@@ -78,7 +125,11 @@ app.post('/signup',  (req,res)=>{
             return
         }
         else{
-            const newAcc = new Bank(data);
+            const fn = req.body.First_name;
+            const ln = req.body.Last_name;
+            const p = req.body.Password;
+
+            const newAcc = new Bank({First_name : fn ,Last_name: ln ,Username: u ,Password : p ,bankBalance:0});
             newAcc.save()
             console.log('New Account created')
             res.redirect('/red1')
@@ -91,7 +142,8 @@ app.listen(3000,()=>{
 })
 
 // backend tasks-
-// check balance of account before transfer 
 // login - done 
 // signup - done 
-// first bankbalance =0 
+// first bankbalance =0  - done
+// deposit
+// display - done 

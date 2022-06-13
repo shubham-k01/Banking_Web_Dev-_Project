@@ -12,7 +12,9 @@ import Login_confirm from './Components/Login_confirm';
 import Login_failed from './Components/Login_Failed';
 import Services1 from './Components/Services1';
 import Services2 from './Components/Services2';
-import Finalser from './Components/Finalser';
+import Balance from './Components/Balance';
+import Deposit from './Components/Deposit';
+import FirstFail from './Components/first_fail';
 
 
 import {
@@ -41,9 +43,9 @@ function App() {
       <Route path="/red4" element={<Login_failed/>}/>
       <Route path="/services1" element={<Services1/>}/>
       <Route path="/services2" element={<Services2/>}/>
-      <Route path="/finalser" element={<Finalser/>}/>
-      {/* <Route path="/display" element={<Display/>}/>
-      <Route path="/deposit" element={<Deposit/>}/> */}
+      <Route path="/ff" element={<FirstFail/>}/>
+      <Route path="/bal" element={<Balance/>}/>
+      <Route path="/mon" element={<Deposit/>}/>
       <Route exact path="/" element={<Home/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/login" element={<Login/>}/>
