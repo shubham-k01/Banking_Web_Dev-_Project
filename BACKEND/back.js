@@ -77,7 +77,7 @@ app.post('/getbal',(req,res)=>{
         if(user){
             const bb = user.bankBalance;
             console.log('Account found')
-            res.send(`<h2>Hi ${user.Username}</h2><br/><h2>Your bank balance is ${user.bankBalance}</h2>`)
+            res.send(`<h2>Hi ${user.Username}</h2><br/><h2>Your bank balance is ₹ ${user.bankBalance}</h2>`)
             return
         }
         else{
@@ -99,7 +99,7 @@ app.post('/depm',(req,res)=>{
             Bank.updateOne({$and: [{ Username: u ,Password : p}]},{bankBalance: newb },((err,user1)=>{
                 if(user1){
                     console.log('Account found')
-                    res.send(`<h1>HI ${u}</h1><br /><h2>Your bank balance was : ${bb}</h2><br /><h2>Updated Balance: ${newb}</h2>`)
+                    res.send(`<h1>HI ${u}</h1><br /><h2>Your bank balance was : ₹ ${bb}</h2><br /><h2>Updated Balance: ₹ ${newb}</h2>`)
                     console.log('Account updated')
                     return
                 }
@@ -117,7 +117,7 @@ app.post('/depm',(req,res)=>{
         )
     
 })
-app.post('/signup',  (req,res)=>{
+app.post('/signup',(req,res)=>{
     const data =req.body;
     const u = req.body.Username;
     console.log(data)
