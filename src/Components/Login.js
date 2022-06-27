@@ -1,66 +1,34 @@
 import React from 'react'
-
-import {Zoom,Fade,Rotate,Flip,Bounce, Roll} from 'react-reveal'
+// import { Navigate } from 'react-router-dom'
+import {Zoom} from 'react-reveal'
 
 export default function Login() {
+    // fetch('/login').then(<Navigate to='/services2'/>)
   return (
-    <div className='container d-flex' style={{width:"600px",height:"550px",marginTop:"50px",justifyContent:"center",alignItems:"center",backgroundColor:"yellowgreen",borderRadius:"10px"}} >
-    <div className='container'>
-    <b>Login</b>
-    <br />
-          <div className='container' >
-            <form className="row g-3 needs-validation my-3" style={{display:'block'}} method="post" action="/services">
-                <Zoom>
-                <div className="col-md-4">
-                    <label htmlFor="validationCustom01" className="form-label">First name</label>
-                    <input type="text" className="form-control" id="validationCustom01" required/>
-                        <div className="valid-feedback">
-                            Looks good!
-                        </div>
-                </div>
-                <div className="col-md-4">
-                    <label htmlFor="validationCustom02" className="form-label">Last name</label>
-                    <input type="text" className="form-control" id="validationCustom02"  required/>
-                        <div className="valid-feedback">
-                            Looks good!
-                        </div>
-                </div>
-                <div className="col-md-4">
-                    <label htmlFor="validationCustomUsername" className="form-label">Username</label>
-                    <div className="input-group has-validation">
-                        <span className="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" className="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required/>
-                            <div className="invalid-feedback">
-                                Please choose a username.
-                            </div>
-                    </div>
-                </div>
-                <div className="col-md-6">
-                    <label htmlFor="validationCustom03" className="form-label">Password</label>
-                    <input type="text" className="form-control" id="validationCustom03" required/>
-                        <div className="invalid-feedback">
-                            Please provide a valid password.
-                        </div>
-                </div>
-                
-                <div className="col-12">
-                    <div className="form-check">
-                        <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required/>
-                            <label className="form-check-label" htmlFor="invalidCheck">
-                                Agree to terms and conditions
-                            </label>
-                            <div className="invalid-feedback">
-                                You must agree before submitting.
-                            </div>
-                    </div>
-                </div>
-                </Zoom>
-                <div className="col-12">
-                    <button className="btn btn-primary" type="submit">Submit form</button>
-                </div>
-            </form>
+    <Zoom>
+        <div className='container d-flex' style={{width:"400px",height:"450px",marginTop:"50px",justifyContent:"center",alignItems:"center",backgroundColor:"yellowgreen",borderRadius:"10px",border:"5px"}} >
+            <div className='container' >
+            <b>Login</b>
+            <br />
+        <form className="row g-3 needs-validation my-3" style={{display:'block'}} method="POST" action="/login">
+
+            <div className="form-group">
+                <label for="exampleInputEmail1">Username</label>
+                <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='Username' placeholder="Enter Username" required />
+                <small id="emailHelp" className="form-text text-muted">We'll never share your Username with anyone else.</small>
+            </div>
+            <div className="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" className="form-control" id="exampleInputPassword1" name='Password' placeholder="Password" required />
+            </div>
+            <div className="form-group form-check">
+                <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                <label className="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" className="btn btn-primary btn-sm" >Submit</button>
+        </form>
         </div>
-</div>
-</div>
+        </div>
+        </Zoom>
   )
 }

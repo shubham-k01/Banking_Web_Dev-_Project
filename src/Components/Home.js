@@ -13,28 +13,24 @@ export default function Home() {
         </div>
         <div className="carousel-inner ">
           <div className="carousel-item active">
-            <img src="https://www17.wellsfargomedia.com/assets/images/contextual/responsive/hpprimary/wfi_ph_g-1022380152_1700x700.jpg"  className="d-block w-100 imgsr" alt="..."/>
+            <img src="https://media.istockphoto.com/photos/business-world-picture-id496993957?k=20&m=496993957&s=612x612&w=0&h=XM7m_M05ajMl6k-12Y5l9K8Jfalye6YI54v_h3eFSwA="  className="d-block w-100 imgsr" alt="..."/>
             <div className="carousel-caption d-none d-md-block text-dark">
-            {/* <img className="img-fluid img-thumbnail" style={{
-          width: "7000px",
-          height: "95vh"
-      }} src="https://www17.wellsfargomedia.com/assets/images/contextual/responsive/hpprimary/wfi_ph_g-1022380152_1700x700.jpg" alt=""/> */}
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
+              <h2><b style={{color:"white"}}>Welcome to BayBank</b> </h2>
+              <p style={{color:"white"}}>A global bank with a local feel</p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src="https://www17.wellsfargomedia.com/assets/images/contextual/responsive/hpprimary/wfi_ph_g-1022380152_1700x700.jpg" className="d-block w-100 imgsr" alt="..."/>
+            <img src="https://media.istockphoto.com/photos/small-trees-on-a-pile-of-gold-coins-and-a-natural-green-background-picture-id1272178182?k=20&m=1272178182&s=612x612&w=0&h=oCe2vKG58b9rj2bjV6Qd3KLG6dNs6wamFsqS6Wkr2Dc=" className="d-block w-100 imgsr" alt="..."/>
             <div className="carousel-caption d-none d-md-block text-dark">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
+            <h4><b style={{color:"black"}}>All your finances managed easily</b></h4>
+            <p style={{color:"white"}}></p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src="https://www17.wellsfargomedia.com/assets/images/contextual/responsive/hpprimary/wfi_ph_g-1022380152_1700x700.jpg" className="d-block w-100 imgsr" alt="..."/>
+            <img src="https://cdn2.hubspot.net/hubfs/53/Untitled%20design-14.png" className="d-block w-100 imgsr" alt="..."/>
             <div className="carousel-caption d-none d-md-block text-dark">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
+              <h4><b style={{color:"black"}}>Trust is the foundation of our bank</b></h4>
+              <p></p>
             </div>
           </div>
         </div>
